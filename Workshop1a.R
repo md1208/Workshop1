@@ -61,21 +61,59 @@ summary_chaff
 # 2 males    22.3    20  2.15
 
 
+# It has arguments for the size, resolution and device for the image. 
+# Since I often make more than one figure, 
+# I might set these argument values to variables first:
+  
+#   # figure saving settings
+#   units <- "in"  
+# fig_w <- 3.5
+# fig_h <- fig_w
+# dpi <- 300
+# device <- "tiff" 
+# 
+# #Then write the figure to file using, for example:
+#   
+#   ggsave("../figures/fig1.tiff",
+#          plot = fig1,
+#          device = device,
+#          width = fig_w,
+#          height = fig_h,
+#          units = units,
+#          dpi = dpi)
 
 
 
+# Make the ggplot
+
+fig1<-ggplot( data = chaff2, aes(x = sex, y = mass)) + geom_point()
 
 
+# So main ggplot is by itself and add anything else 
 
 
+# ggplot(data = summary_chaff, aes(x = sex, y = mass)) + geom_point()
 
 
+# No mass in the summary
 
 
+# figure saving settings
+  units <- "in"
+fig_w <- 3.5
+fig_h <- fig_w
+dpi <- 300
+device <- "tiff"
 
+#Then write the figure to file using, for example:
 
-
-
+  ggsave("./chaff plot",
+         plot = fig1,
+         device = device,
+         width = fig_w,
+         height = fig_h,
+         units = units,
+         dpi = dpi)
 
 
 
