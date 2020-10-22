@@ -86,8 +86,12 @@ summary_chaff
 
 # Make the ggplot
 
-fig1<-ggplot( data = chaff2, aes(x = sex, y = mass)) + geom_point()
+fig1<-ggplot( data = chaff2, aes(x = sex, y = mass, col = sex)) + geom_point() + theme_bw() +
+  ylab("Mass") + xlab("Sex") +
+  labs(col = "Sex")
 
+# if you want to see the plot (even though its assigned):
+fig1
 
 # So main ggplot is by itself and add anything else 
 
@@ -115,7 +119,7 @@ device <- "tiff"
          units = units,
          dpi = dpi)
 
-
+# Hello! Sophie here, hopefully this has all worked :) 
 
 
 
